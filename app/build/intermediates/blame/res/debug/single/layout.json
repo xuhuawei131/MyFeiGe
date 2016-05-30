@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chat_item.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\layout\\chat_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chat.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\layout\\chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\layout\\children.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\layout\\children.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\layout\\groups.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\layout\\groups.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\layout\\files.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\layout\\files.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\layout\\file_item.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\layout\\file_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\layout\\file_download_notification.xml",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\layout\\file_download_notification.xml"
+    }
+]

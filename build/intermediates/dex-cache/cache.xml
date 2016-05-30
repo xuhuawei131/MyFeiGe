@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8768946ef5e0f67646898a9645a1f6ceecfc57b8">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8a7c79761d8c50c2f199f73cca4926013057b805\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="69d838930a2a2f08f1c7f6e081fd86935afc73e3">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_30ccb58184a8a5d033fc5f45ec6ec8a548f216d5\classes.dex" />
+    </item>
+
+</items>

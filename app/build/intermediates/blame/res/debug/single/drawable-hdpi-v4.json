@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\file_parent.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\file_parent.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mainbodytop.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\mainbodytop.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\headimage_background.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\headimage_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\group_exp.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\group_exp.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_pressed.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\btn_pressed.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\file_doc.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\file_doc.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\file_root.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\file_root.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_normal.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\btn_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\divider_group.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\divider_group.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\group_notexp.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\group_notexp.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\chat_quit_nor.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\chat_quit_nor.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\file_directory.png",
+        "source": "C:\\Users\\Administrator\\AndroidStudioProjects\\MyFeiGe\\app\\src\\main\\res\\drawable-hdpi\\file_directory.png"
+    }
+]
