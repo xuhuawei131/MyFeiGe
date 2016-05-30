@@ -38,49 +38,49 @@ import android.widget.Toast;
 
 public class MyFeiGeActivity extends MyFeiGeBaseActivity implements OnClickListener{
 	public static String hostIp;
-	
+
 	private ExpandableListView userList;
-	
+
 	private UserExpandableListAdapter adapter;
-	private List<String> strGroups; //ËùÓĞÒ»¼¶²Ëµ¥Ãû³Æ¼¯ºÏ
+	private List<String> strGroups; //æ‰€æœ‰ä¸€çº§èœå•åç§°é›†åˆ
 	private List<List<User>> children;
-	
+
 	private TextView totalUser;
 	private Button refreshButton;
 	private TextView ipTextView;;
-    /** Called when the activity is first created. */
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        
-        if(!isWifiActive()){	//ÈôwifiÃ»ÓĞ´ò¿ª£¬ÌáÊ¾
-        	Toast.makeText(this, R.string.no_wifi, Toast.LENGTH_LONG).show();
-        }
-        
-        
-        findViews();
-        
-        strGroups = new ArrayList<String>(); //ËùÓĞÒ»¼¶²Ëµ¥Ãû³Æ¼¯ºÏ
+	/** Called when the activity is first created. */
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+
+		if(!isWifiActive()){	//è‹¥wifiæ²¡æœ‰æ‰“å¼€ï¼Œæç¤º
+			Toast.makeText(this, R.string.no_wifi, Toast.LENGTH_LONG).show();
+		}
+
+
+		findViews();
+
+		strGroups = new ArrayList<String>(); //æ‰€æœ‰ä¸€çº§èœå•åç§°é›†åˆ
 		children = new ArrayList<List<User>>();
-        
+
 //        netThreadHelper = NetThreadHelper.newInstance();
-        netThreadHelper.connectSocket();	//¿ªÊ¼¼àÌıÊı¾İ
-        netThreadHelper.noticeOnline();	//¹ã²¥ÉÏÏß
-        
-        adapter = new UserExpandableListAdapter(this, strGroups, children);
-        userList.setAdapter(adapter);
-        
-        refreshButton.setOnClickListener(this);
-        refreshViews();
-    }
-    
+		netThreadHelper.connectSocket();	//å¼€å§‹ç›‘å¬æ•°æ®
+		netThreadHelper.noticeOnline();	//å¹¿æ’­ä¸Šçº¿
+
+		adapter = new UserExpandableListAdapter(this, strGroups, children);
+		userList.setAdapter(adapter);
+
+		refreshButton.setOnClickListener(this);
+		refreshViews();
+	}
+
 	@Override
 	public void finish() {
 		super.finish();
-		netThreadHelper.noticeOffline();	//Í¨ÖªÏÂÏß
-		netThreadHelper.disconnectSocket(); //Í£Ö¹¼àÌı
-		
+		netThreadHelper.noticeOffline();	//é€šçŸ¥ä¸‹çº¿
+		netThreadHelper.disconnectSocket(); //åœæ­¢ç›‘å¬
+
 	}
 
 
@@ -91,116 +91,116 @@ public class MyFeiGeActivity extends MyFeiGeBaseActivity implements OnClickListe
 		refreshButton = (Button) findViewById(R.id.refresh);
 		ipTextView = (TextView) findViewById(R.id.mymood);
 		hostIp = getLocalIpAddress();
-		ipTextView.setText(hostIp);	//ÉèÖÃIP
+		ipTextView.setText(hostIp);	//è®¾ç½®IP
 	}
 
 
 	@Override
 	public void processMessage(Message msg) {
 		switch(msg.what){
-		case IpMessageConst.IPMSG_BR_ENTRY:
-		case IpMessageConst.IPMSG_BR_EXIT:
-		case IpMessageConst.IPMSG_ANSENTRY:
-		case IpMessageConst.IPMSG_SENDMSG:
-			refreshViews();	
-			break;
+			case IpMessageConst.IPMSG_BR_ENTRY:
+			case IpMessageConst.IPMSG_BR_EXIT:
+			case IpMessageConst.IPMSG_ANSENTRY:
+			case IpMessageConst.IPMSG_SENDMSG:
+				refreshViews();
+				break;
 		}
 	}
-	
+
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK)
 			exit();
 		return true;
 	}
-	
-	//¸üĞÂÊı¾İºÍUIÏÔÊ¾
-	private void refreshViews(){	
-		//Çå¿ÕÊı¾İ
+
+	//æ›´æ–°æ•°æ®å’ŒUIæ˜¾ç¤º
+	private void refreshViews(){
+		//æ¸…ç©ºæ•°æ®
 		strGroups.clear();
 		children.clear();
-		
+
 		Map<String,User> currentUsers = new HashMap<String, User>();
 		currentUsers.putAll(netThreadHelper.getUsers());
 		Queue<ChatMessage> msgQueue = netThreadHelper.getReceiveMsgQueue();
-		Map<String, Integer> ip2Msg = new HashMap<String, Integer>();	//IPµØÖ·ÓëÎ´ÊÕÏûÏ¢¸öÊıµÄmap
-		//±éÀúÏûÏ¢¶ÓÁĞ£¬Ìî³äip2Msg
+		Map<String, Integer> ip2Msg = new HashMap<String, Integer>();	//IPåœ°å€ä¸æœªæ”¶æ¶ˆæ¯ä¸ªæ•°çš„map
+		//éå†æ¶ˆæ¯é˜Ÿåˆ—ï¼Œå¡«å……ip2Msg
 		Iterator<ChatMessage> it = msgQueue.iterator();
 		while(it.hasNext()){
 			ChatMessage chatMsg = it.next();
-			String ip = chatMsg.getSenderIp();	//µÃµ½ÏûÏ¢·¢ËÍÕßIP
+			String ip = chatMsg.getSenderIp();	//å¾—åˆ°æ¶ˆæ¯å‘é€è€…IP
 			Integer tempInt = ip2Msg.get(ip);
-			if(tempInt == null){	//ÈômapÖĞÃ»ÓĞIP¶ÔÓ¦µÄÏûÏ¢¸öÊı,Ôò°ÑIPÌí¼Ó½øÈ¥,ÖµÎª1
+			if(tempInt == null){	//è‹¥mapä¸­æ²¡æœ‰IPå¯¹åº”çš„æ¶ˆæ¯ä¸ªæ•°,åˆ™æŠŠIPæ·»åŠ è¿›å»,å€¼ä¸º1
 				ip2Msg.put(ip, 1);
-			}else{	//ÈôÒÑ¾­ÓĞ¶ÔÓ¦ip£¬Ôò½«ÆäÖµ¼ÓÒ»
+			}else{	//è‹¥å·²ç»æœ‰å¯¹åº”ipï¼Œåˆ™å°†å…¶å€¼åŠ ä¸€
 				ip2Msg.put(ip, ip2Msg.get(ip)+1);
 			}
 		}
-		
-		//±éÀúcurrentUsers,¸üĞÂstrGroupsºÍchildren
+
+		//éå†currentUsers,æ›´æ–°strGroupså’Œchildren
 		Iterator<String> iterator = currentUsers.keySet().iterator();
 		while (iterator.hasNext()) {
-			User user = currentUsers.get(iterator.next());	
-			//ÉèÖÃÃ¿¸öÔÚÏßÓÃ»§¶ÔÓ¦µÄÎ´ÊÕÏûÏ¢¸öÊı
+			User user = currentUsers.get(iterator.next());
+			//è®¾ç½®æ¯ä¸ªåœ¨çº¿ç”¨æˆ·å¯¹åº”çš„æœªæ”¶æ¶ˆæ¯ä¸ªæ•°
 			if(ip2Msg.get(user.getIp()) == null){
 				user.setMsgCount(0);
 			}else{
 				user.setMsgCount(ip2Msg.get(user.getIp()));
 			}
-			
+
 			String groupName = user.getGroupName();
 			int index = strGroups.indexOf(groupName);
-			if(index == -1){ //Ã»ÓĞÏàÓ¦·Ö×é£¬ÔòÌí¼Ó·Ö×é£¬²¢Ìí¼Ó¶ÔÓ¦child
+			if(index == -1){ //æ²¡æœ‰ç›¸åº”åˆ†ç»„ï¼Œåˆ™æ·»åŠ åˆ†ç»„ï¼Œå¹¶æ·»åŠ å¯¹åº”child
 				strGroups.add(groupName);
 //				List<Map<String,String>> childData = new ArrayList<Map<String,String>>();
 //				Map<String, String> child = new HashMap<String,String>();
 //				child.put("userName", user.getUserName());
 //				childData.add(child);
 //				children.add(childData);
-				
+
 				List<User> childData = new ArrayList<User>();
 				childData.add(user);
 				children.add(childData);
-			}else{	//ÒÑ´æÔÚ·Ö×é£¬Ôò½«¶ÔÓ¦childÌí¼Óµ½Ïà¶ÔÓ¦·Ö×éÖĞ
+			}else{	//å·²å­˜åœ¨åˆ†ç»„ï¼Œåˆ™å°†å¯¹åº”childæ·»åŠ åˆ°ç›¸å¯¹åº”åˆ†ç»„ä¸­
 //				Map<String,String> child = new HashMap<String,String>();
 //				child.put("userName", user.getUserName());
 //				children.get(index).add(child);
 				children.get(index).add(user);
 			}
-			
+
 		}
-		
-		//¸üĞÂgroups
+
+		//æ›´æ–°groups
 //		for(int i = 0; i < strGroups.size(); i++){
 //			Map<String,String> groupMap = new HashMap<String,String>();
 //			groupMap.put("group", strGroups.get(i));
 //			groups.add(groupMap);
 //		}
-		
-		
-		adapter.notifyDataSetChanged();	//¸üĞÂExpandableListView
-		
-		String countStr = "µ±Ç°ÔÚÏß" + currentUsers.size() +"¸öÓÃ»§";
-        totalUser.setText(countStr);	//¸üĞÂTextView
-		
+
+
+		adapter.notifyDataSetChanged();	//æ›´æ–°ExpandableListView
+
+		String countStr = "å½“å‰åœ¨çº¿" + currentUsers.size() +"ä¸ªç”¨æˆ·";
+		totalUser.setText(countStr);	//æ›´æ–°TextView
+
 	}
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		if(v.equals(refreshButton)){	//ÈôÊÇË¢ĞÂ
+		if(v.equals(refreshButton)){	//è‹¥æ˜¯åˆ·æ–°
 			netThreadHelper.refreshUsers();
 			refreshViews();
 		}
-	
+
 	}
-	
-	//ÅĞ¶ÏwifiÊÇ·ñ´ò¿ª
+
+	//åˆ¤æ–­wifiæ˜¯å¦æ‰“å¼€
 	public boolean isWifiActive(){
 		ConnectivityManager mConnectivity = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		if(mConnectivity != null){
 			NetworkInfo[] infos = mConnectivity.getAllNetworkInfo();
-			
+
 			if(infos != null){
 				for(NetworkInfo ni: infos){
 					if("WIFI".equals(ni.getTypeName()) && ni.isConnected())
@@ -208,14 +208,14 @@ public class MyFeiGeActivity extends MyFeiGeBaseActivity implements OnClickListe
 				}
 			}
 		}
-		
+
 		return false;
 	}
-	
-	//µÃµ½±¾»úIPµØÖ·
+
+	//å¾—åˆ°æœ¬æœºIPåœ°å€
 	public String getLocalIpAddress(){
 		try{
-			Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); 
+			Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces();
 			while(en.hasMoreElements()){
 				NetworkInterface nif = en.nextElement();
 				Enumeration<InetAddress> enumIpAddr = nif.getInetAddresses();
@@ -227,13 +227,13 @@ public class MyFeiGeActivity extends MyFeiGeBaseActivity implements OnClickListe
 				}
 			}
 		}catch(SocketException ex){
-			Log.e("MyFeiGeActivity", "»ñÈ¡±¾µØIPµØÖ·Ê§°Ü");
+			Log.e("MyFeiGeActivity", "è·å–æœ¬åœ°IPåœ°å€å¤±è´¥");
 		}
-		
+
 		return null;
 	}
-	
-	//»ñÈ¡±¾»úMACµØÖ·
+
+	//è·å–æœ¬æœºMACåœ°å€
 	public String getLocalMacAddress(){
 		WifiManager wifi = (WifiManager)getSystemService(Context.WIFI_SERVICE);
 		WifiInfo info = wifi.getConnectionInfo();

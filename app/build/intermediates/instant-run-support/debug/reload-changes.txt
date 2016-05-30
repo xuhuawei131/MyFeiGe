@@ -1,0 +1,8 @@
+CHANGED,C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ccf\feige\activity\MyFeiGeBaseActivity$1$override.class
+CHANGED,C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ccf\feige\activity\MyFeiGeBaseActivity$1$2$override.class
+CHANGED,C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ccf\feige\adapter\UserExpandableListAdapter$1$override.class
+CHANGED,C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ccf\feige\adapter\UserExpandableListAdapter$override.class
+CHANGED,C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ccf\feige\activity\MyFeiGeBaseActivity$override.class
+CHANGED,C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ccf\feige\activity\MyFeiGeBaseActivity$1$1$override.class
+CHANGED,C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ccf\feige\activity\MyFeiGeActivity$override.class
+CHANGED,C:\Users\Administrator\AndroidStudioProjects\MyFeiGe\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
